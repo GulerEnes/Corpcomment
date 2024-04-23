@@ -1,8 +1,19 @@
-import Container from "./Container";
-import Footer from "./Footer";
-import HashtagList from "./HashtagList";
+import Container from "./layout/Container";
+import Footer from "./layout/Footer";
+import HashtagList from "./hashtag/HashtagList";
+import {useFeedbackItemsStore} from "../stores/feedbackItemsStore";
+import {useEffect} from "react";
+import React from "react";
 
 function App() {
+	const fetchFeedbackItems = useFeedbackItemsStore(
+		(state) => state.fetchFeedbackItems
+	);
+
+	useEffect(() => {
+		fetchFeedbackItems();
+	}, [fetchFeedbackItems]);
+
 	return (
 		<div className="app">
 			<Footer />

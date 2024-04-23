@@ -1,13 +1,11 @@
-function Logo() {
+import React from "react";
+export default function Logo() {
 	return (
-		<a href="/">
+		<a href="/" className="logo">
 			<img
-				className="logo"
 				src="https://bytegrad.com/course-assets/js/1/logo.svg"
 				alt="logo"
 			/>
 		</a>
 	);
 }
-
-export default Logo;
